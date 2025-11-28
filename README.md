@@ -43,7 +43,7 @@ Responsive Web Design
 
 Krishna Dighe
 
-🔗 Connect with me on LinkedIn:[LinkedIn](https://www.linkedin.com/in/krishna-dighe410)
+🔗 Connect with me on [LinkedIn](https://www.linkedin.com/in/krishna-dighe410)
 
 🧠 Inspiration
 
