@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlowAI - Personalized Skincare Powered by AI</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+   <!-- For PNG favicon -->
+    <link rel="icon" type="image/PNG" href="favicon.png" sizes="50x50">
+</head>
+<body>
+    <div class="ai-flow"></div>
+    
+    <!-- Navigation -->
+<nav class="nav">
+    <div class="nav-container">
+        <div class="logo">GlowAI</div>
+        <ul class="nav-menu">
+            <li><a href="#home">Home</a></li>
+            <li class="dropdown">
+                <a href="#products" class="dropdown-toggle">Products <span class="dropdown-arrow">▼</span></a>
+                <div class="dropdown-menu">
+                    <a href="#concerns">Concerns</a>
+                    <a href="#best-sellers">Best Sellers</a>
+                    <a href="#new-arrivals">New Arrivals</a>
+                    <a href="#ai-picks">AI Picks for You</a>
+                    <a href="#budget-eco">Budget/Eco-Friendly</a>
+                     <a href="#featured-kits">Featured Kits</a>
+                </div>
+            </li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <!-- Cart Icon -->
+        <div class="cart-icon" id="cartIcon">
+            🛒 <span id="cartCount">0</span>
+        </div>
+
+        <button class="mobile-menu">☰</button>
+    </div>
+</nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Your Skin's AI Personal Trainer</h1>
+                <p class="hero-subtitle">Discover skincare products perfectly matched to your unique skin profile using advanced AI analysis.</p>
+                <a href="javascript:void(0)" class="cta-button holographic-button" id="startQuizBtn">Start My Skin Quiz</a>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-images">
+                    <div class="hero-image-card woman-card">
+                        <img src="images/1.jpg" alt="Happy man with healthy skin" class="woman-image">
+                        <div class="ai-match-badge">AI Match 92%</div>
+                    </div>
+                    <div class="hero-image-card product-card-1">
+                        <img src="images/2.jpg" alt="Skincare cleanser bottle" class="product-image">
+                    </div>
+                    <div class="hero-image-card product-card-2">
+                        <img src="images/3.jpg" alt="Natural serum with botanicals" class="product-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ENHANCED QUIZ MODAL -->
+    <div class="quiz-modal" id="quizModal">
+        <div class="quiz-overlay" id="quizOverlay"></div>
+        <div class="quiz-box">
+            <div class="quiz-header">
+                <h2>✨ AI Skin Analysis Quiz</h2>
+                <button class="close-quiz" id="closeQuiz">&times;</button>
+            </div>
+            <div class="quiz-progress">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <span class="progress-text">Question <span id="currentQ">1</span> of 5</span>
+            </div>
+            <form id="quizForm">
+                <div class="quiz-question active" data-question="1">
+                    <div class="question-header">
+                        <span class="question-icon">🔍</span>
+                        <h3>What is your skin type?</h3>
+                    </div>
+                    <div class="options-grid">
+                        <label class="quiz-option">
+                            <input type="radio" name="q1" value="oily" required>
+                            <span class="option-content">
+                                <span class="option-emoji">🛢️</span>
+                                <span class="option-text">Oily</span>
+                            </span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q1" value="dry">
+                            <span class="option-content">
+                                <span class="option-emoji">🏜️</span>
+                                <span class="option-text">Dry</span>
+                            </span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q1" value="combination">
+                            <span class="option-content">
+                                <span class="option-emoji">⚖️</span>
+                                <span class="option-text">Combination</span>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="quiz-question" data-question="2">
+                    <div class="question-header">
+                        <span class="question-icon">🤔</span>
+                        <h3>Do you have acne-prone skin?</h3>
+                    </div>
+                    <div class="options-grid">
+                        <label class="quiz-option">
+                            <input type="radio" name="q2" value="yes" required>
+                            <span class="option-content">
+                                <span class="option-emoji">😔</span>
+                                <span class="option-text">Yes</span>
+                            </span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q2" value="no">
+                            <span class="option-content">
+                                <span class="option-emoji">😊</span>
+                                <span class="option-text">No</span>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="quiz-question" data-question="3">
+                    <div class="question-header">
+                        <span class="question-icon">⏰</span>
+                        <h3>Is anti-aging a concern?</h3>
+                    </div>
+                    <div class="options-grid">
+                        <label class="quiz-option">
+                            <input type="radio" name="q3" value="yes" required>
+                            <span class="option-content">
+                                <span class="option-emoji">💭</span>
+                                <span class="option-text">Yes</span>
+                            </span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q3" value="no">
+                            <span class="option-content">
+                                <span class="option-emoji">🙌</span>
+                                <span class="option-text">No</span>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="quiz-question" data-question="4">
+                    <div class="question-header">
+                        <span class="question-icon">🌸</span>
+                        <h3>How sensitive is your skin?</h3>
+                    </div>
+                    <div class="options-grid">
+                        <label class="quiz-option">
+                            <input type="radio" name="q4" value="very" required>
+                            <span class="option-content">
+                                <span class="option-emoji">😰</span>
+                                <span class="option-text">Very sensitive</span>
+                            </span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q4" value="normal">
+                            <span class="option-content">
+                                <span class="option-emoji">😌</span>
+                                <span class="option-text">Not very sensitive</span>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="quiz-question" data-question="5">
+                    <div class="question-header">
+                        <span class="question-icon">⚡</span>
+                        <h3>Do you have hyperpigmentation?</h3>
+                    </div>
+                    <div class="options-grid">
+                        <label class="quiz-option">
+                            <input type="radio" name="q5" value="yes" required>
+                            <span class="option-content">
+                                <span class="option-emoji">🎯</span>
+                                <span class="option-text">Yes</span>
+                            </span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q5" value="no">
+                            <span class="option-content">
+                                <span class="option-emoji">✨</span>
+                                <span class="option-text">No</span>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="quiz-navigation">
+                    <button type="button" class="nav-btn prev-btn" id="prevBtn">← Previous</button>
+                    <button type="button" class="nav-btn next-btn" id="nextBtn">Next →</button>
+                    <button type="submit" class="submit-btn" id="submitBtn" style="display: none;">🔮 Get My Results</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Concerns Section -->
+    <section class="section category-section" id="concerns">
+        <div class="container">
+            <h2 class="section-title">Shop by Concerns</h2>
+            <div class="category-description">
+                <p>Target your specific skin concerns with our curated solutions</p>
+            </div>
+            <div class="recommendations">
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="images/ClearSkinAcneTreatment.webp" alt="Acne Treatment" class="product-image">
+                        <div class="concern-badge">Acne</div>
+                    </div>
+                    <h3>Clear Skin Acne Treatment</h3>
+                    <p>Powerful salicylic acid formula that targets breakouts and prevents future acne.</p>
+                    <div class="price">$42</div>
+                    <button class="btn-add" data-id="4" data-name="Clear Skin Acne Treatment" data-price="42">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="images/Retinol Age Defense Cream.webp" alt="Anti-Aging Cream" class="product-image">
+                        <div class="concern-badge">Anti-Aging</div>
+                    </div>
+                    <h3>Retinol Age Defense Cream</h3>
+                    <p>Clinical-strength retinol to reduce fine lines and improve skin texture.</p>
+                    <div class="price">$68</div>
+                    <button class="btn-add" data-id="5" data-name="Retinol Age Defense Cream" data-price="68">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="images/Brightening Dark Spot Corrector.webp" alt="Dark Spot Corrector" class="product-image">
+                        <div class="concern-badge">Dark Spots</div>
+                    </div>
+                    <h3>Brightening Dark Spot Corrector</h3>
+                    <p>Targets hyperpigmentation with vitamin C and kojic acid complex.</p>
+                    <div class="price">$55</div>
+                    <button class="btn-add" data-id="6" data-name="Brightening Dark Spot Corrector" data-price="55">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Best Sellers Section -->
+    <section class="section section-alt category-section" id="best-sellers">
+        <div class="container">
+            <h2 class="section-title">🔥 Best Sellers</h2>
+            <div class="category-description">
+                <p>Our most loved products - trusted by thousands of customers</p>
+            </div>
+            <div class="recommendations">
+                <div class="product-card bestseller">
+                    <div class="product-image-container">
+                        <img src="images/Hyaluronic Hydrating Serum.webp" alt="Hyaluronic Serum" class="product-image">
+                        <div class="bestseller-badge">#1 Bestseller</div>
+                    </div>
+                    <h3>Hyaluronic Hydrating Serum</h3>
+                    <p>Our top-rated serum with 5 types of hyaluronic acid for ultimate hydration.</p>
+                    <div class="price">$39 <span class="original-price">$49</span></div>
+                    <button class="btn-add" data-id="7" data-name="Hyaluronic Hydrating Serum" data-price="39">Add to Cart</button>
+                </div>
+                <div class="product-card bestseller">
+                    <div class="product-image-container">
+                        <img src="images/Gentle Daily Foam Cleanser.webp" alt="Gentle Foam Cleanser" class="product-image">
+                        <div class="bestseller-badge">#2 Bestseller</div>
+                    </div>
+                    <h3>Gentle Daily Foam Cleanser</h3>
+                    <p>Perfect daily cleanser that removes impurities without stripping natural oils.</p>
+                    <div class="price">$28</div>
+                    <button class="btn-add" data-id="8" data-name="Gentle Daily Foam Cleanser" data-price="28">Add to Cart</button>
+                </div>
+                <div class="product-card bestseller">
+                    <div class="product-image-container">
+                        <img src="images/Niacinamide-(Face Serum).webp" alt="Niacinamide Serum" class="product-image">
+                        <div class="bestseller-badge">#3 Bestseller</div>
+                    </div>
+                    <h3>10% Niacinamide + Zinc</h3>
+                    <p>Controls oil production and minimizes pores with this powerful combination.</p>
+                    <div class="price">$35</div>
+                    <button class="btn-add" data-id="9" data-name="10% Niacinamide + Zinc" data-price="35">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Arrivals Section -->
+    <section class="section category-section" id="new-arrivals">
+        <div class="container">
+            <h2 class="section-title">✨ New Arrivals</h2>
+            <div class="category-description">
+                <p>Latest innovations in skincare - be the first to try them</p>
+            </div>
+            <div class="recommendations">
+                <div class="product-card new-arrival">
+                    <div class="product-image-container">
+                        <img src="images/Dermaqual REJUVEYES Advanced Peptide Complex.webp" alt="Peptide Complex" class="product-image">
+                        <div class="new-badge">NEW</div>
+                    </div>
+                    <h3>Advanced Peptide Complex</h3>
+                    <p>Revolutionary peptide formula for firming and anti-aging benefits.</p>
+                    <div class="price">$72</div>
+                    <button class="btn-add" data-id="10" data-name="Advanced Peptide Complex" data-price="72">Add to Cart</button>
+                </div>
+                <div class="product-card new-arrival">
+                    <div class="product-image-container">
+                        <img src="images/Plant-Based Bakuchiol Serum.webp" alt="Bakuchiol Serum" class="product-image">
+                        <div class="new-badge">NEW</div>
+                    </div>
+                    <h3>Plant-Based Bakuchiol Serum</h3>
+                    <p>Natural alternative to retinol with gentle yet effective results.</p>
+                    <div class="price">$48</div>
+                    <button class="btn-add" data-id="11" data-name="Plant-Based Bakuchiol Serum" data-price="48">Add to Cart</button>
+                </div>
+                <div class="product-card new-arrival">
+                    <div class="product-image-container">
+                        <img src="images/Ceramide Barrier Repair Cream.webp" alt="Ceramide Barrier Cream" class="product-image">
+                        <div class="new-badge">NEW</div>
+                    </div>
+                    <h3>Ceramide Barrier Repair Cream</h3>
+                    <p>Intensive moisturizer that strengthens and repairs damaged skin barrier.</p>
+                    <div class="price">$52</div>
+                    <button class="btn-add" data-id="12" data-name="Ceramide Barrier Repair Cream" data-price="52">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Picks Section -->
+    <section class="section section-alt category-section" id="ai-picks">
+        <div class="container">
+            <h2 class="section-title">🤖 AI Picks for You</h2>
+            <div class="category-description">
+                <p>Personalized recommendations powered by artificial intelligence</p>
+            </div>
+            <div class="recommendations">
+                <div class="product-card ai-pick">
+                    <div class="product-image-container">
+                        <img src="images/Custom Vitamin C Serum.webp" alt="Custom Serum" class="product-image">
+                        <div class="ai-badge">AI Match: 99%</div>
+                    </div>
+                    <h3>Custom Vitamin C Serum</h3>
+                    <p>AI-formulated serum based on your skin analysis and preferences.</p>
+                    <div class="price">$65</div>
+                    <button class="btn-add" data-id="13" data-name="Custom Vitamin C Serum" data-price="65">Add to Cart</button>
+                </div>
+                <div class="product-card ai-pick">
+                    <div class="product-image-container">
+                        <img src="images/Smart Adaptive Moisturizer.webp" alt="Smart Moisturizer" class="product-image">
+                        <div class="ai-badge">AI Match: 97%</div>
+                    </div>
+                    <h3>Smart Adaptive Moisturizer</h3>
+                    <p>Changes formula based on environmental factors and skin needs.</p>
+                    <div class="price">$58</div>
+                    <button class="btn-add" data-id="14" data-name="Smart Adaptive Moisturizer" data-price="58">Add to Cart</button>
+                </div>
+                <div class="product-card ai-pick">
+                    <div class="product-image-container">
+                        <img src="images/Personalized pH Cleanser.webp" alt="Personalized Cleanser" class="product-image">
+                        <div class="ai-badge">AI Match: 96%</div>
+                    </div>
+                    <h3>Personalized pH Cleanser</h3>
+                    <p>Custom pH balance designed specifically for your skin type.</p>
+                    <div class="price">$38</div>
+                    <button class="btn-add" data-id="15" data-name="Personalized pH Cleanser" data-price="38">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Budget/Eco-Friendly Section -->
+    <section class="section category-section" id="budget-eco">
+        <div class="container">
+            <h2 class="section-title">🌱 Budget & Eco-Friendly</h2>
+            <div class="category-description">
+                <p>Sustainable skincare that's gentle on your skin and wallet</p>
+            </div>
+            <div class="recommendations">
+                <div class="product-card eco-friendly">
+                    <div class="product-image-container">
+                        <img src="images/Organic Oat Cleanser.webp" alt="Natural Cleanser" class="product-image">
+                        <div class="eco-badge">Eco-Friendly</div>
+                    </div>
+                    <h3>Organic Oat Cleanser</h3>
+                    <p>100% natural ingredients in recyclable packaging. Gentle and effective.</p>
+                    <div class="price">$18</div>
+                    <button class="btn-add" data-id="16" data-name="Organic Oat Cleanser" data-price="18">Add to Cart</button>
+                </div>
+                <div class="product-card eco-friendly">
+                    <div class="product-image-container">
+                        <img src="images/Pure Rose Water Toner.webp" alt="Rose Water Toner" class="product-image">
+                        <div class="eco-badge">Budget Pick</div>
+                    </div>
+                    <h3>Pure Rose Water Toner</h3>
+                    <p>Simple, effective toner with organic rose water. Zero waste packaging.</p>
+                    <div class="price">$15</div>
+                    <button class="btn-add" data-id="17" data-name="Pure Rose Water Toner" data-price="15">Add to Cart</button>
+                </div>
+                <div class="product-card eco-friendly">
+                    <div class="product-image-container">
+                        <img src="images/Raw Shea Butter Moisturizer.webp" alt="Shea Butter Moisturizer" class="product-image">
+                        <div class="eco-badge">Sustainable</div>
+                    </div>
+                    <h3>Raw Shea Butter Moisturizer</h3>
+                    <p>Fair-trade shea butter in biodegradable packaging. Deeply nourishing.</p>
+                    <div class="price">$22</div>
+                    <button class="btn-add" data-id="18" data-name="Raw Shea Butter Moisturizer" data-price="22">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- ENHANCED CART MODAL -->
+<div class="cart-overlay" id="cartOverlay"></div>
+
+<div class="cart-modal" id="cartModal">
+    <!-- Swipe indicator -->
+    <div class="cart-swipe-indicator">→</div>
+    
+    <!-- Cart Header -->
+    <div class="cart-header">
+        <h2>Shopping Cart (<span id="cartItemCount">0</span>)</h2>
+        <button class="close-cart" id="closeCart">&times;</button>
+    </div>
+    
+    <!-- Cart Items Container -->
+    <div class="cart-items-container" id="cartItemsContainer">
+        <!-- Items will be dynamically inserted here -->
+    </div>
+    
+    <!-- Cart Footer -->
+    <div class="cart-footer">
+        <div class="cart-total-section">
+            <div class="cart-total-row">
+                <span class="cart-total-label">Subtotal:</span>
+                <span class="cart-total-value" id="cartSubtotal">$0</span>
+            </div>
+            <div class="cart-total-row">
+                <span class="cart-total-label">Shipping:</span>
+                <span class="cart-total-value">FREE</span>
+            </div>
+            <div class="cart-total-row">
+                <span class="cart-total-label">Total:</span>
+                <span class="cart-total-value" id="cartTotal">$0</span>
+            </div>
+        </div>
+        
+        <!-- Buttons Section -->
+        <div class="cart-footer-buttons">
+            <button class="cart-empty-btn" onclick="if(confirm('Clear all items from cart?')) window.enhancedCart.clearCart()">
+                Empty Cart
+            </button>
+            <button class="cart-checkout-btn" id="checkoutBtn">
+                Proceed to Checkout
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Hidden product image mapping -->
+<div class="product-image-map" id="productImageMap">
+    <div data-id="4" data-image="images/ClearSkinAcneTreatment.webp"></div>
+    <div data-id="5" data-image="images/Retinol Age Defense Cream.webp"></div>
+    <div data-id="6" data-image="images/Brightening Dark Spot Corrector.webp"></div>
+    <div data-id="7" data-image="images/Hyaluronic Hydrating Serum.webp"></div>
+    <div data-id="8" data-image="images/Gentle Daily Foam Cleanser.webp"></div>
+    <div data-id="9" data-image="images/Niacinamide-(Face Serum).webp"></div>
+    <div data-id="10" data-image="images/Dermaqual REJUVEYES Advanced Peptide Complex.webp"></div>
+    <div data-id="11" data-image="images/Plant-Based Bakuchiol Serum.webp"></div>
+    <div data-id="12" data-image="images/Ceramide Barrier Repair Cream.webp"></div>
+    <div data-id="13" data-image="images/Custom Vitamin C Serum.webp"></div>
+    <div data-id="14" data-image="images/Smart Adaptive Moisturizer.webp"></div>
+    <div data-id="15" data-image="images/Personalized pH Cleanser.webp"></div>
+    <div data-id="16" data-image="images/Organic Oat Cleanser.webp"></div>
+    <div data-id="17" data-image="images/Pure Rose Water Toner.webp"></div>
+    <div data-id="18" data-image="images/Raw Shea Butter Moisturizer.webp"></div>
+    <div data-id="kit-1" data-image="images/Acne-Fighting Trio kit .webp"></div>
+    <div data-id="kit-2" data-image="images/Anti-Aging Essentials kit.webp"></div>
+    <div data-id="kit-3" data-image="images/Sensitive Skin Savior.webp"></div>
+</div>
+
+    <!-- How It Works -->
+    <section class="section section-alt" id="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How GlowAI Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-icon"><div class="step-number">1</div>📱</div>
+                    <h3>Take the Quiz</h3>
+                    <p>Answer questions about your needs and lifestyle in just 3 minutes.</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon"><div class="step-number">2</div>🧠</div>
+                    <h3>AI Analysis</h3>
+                    <p>Our advanced AI analyzes thousands of data points to understand your profile.</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon"><div class="step-number">3</div>✨</div>
+                    <h3>Get Your Kit</h3>
+                    <p>Receive personalized products delivered to your door with detailed usage instructions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carousel -->
+    <!-- Replace your existing carousel section with this updated version -->
+<section class="section" id="featured-kits">
+    <div class="container">
+        <h2 class="section-title">Featured Kits</h2>
+        <div class="carousel-container">
+            <div class="carousel" id="kitsCarousel">
+                <div class="carousel-item">
+                    <div class="kit-image-container">
+                        <img src="images/Acne-Fighting Trio kit .webp" alt="Acne-Fighting Trio Kit" class="kit-image">
+                    </div>
+                    <h3>Acne-Fighting Trio</h3>
+                    <p>Complete system for oily, acne-prone needs.</p>
+                    <div class="price">$89</div>
+                    <button class="cta-button kit-button" 
+                            data-kit-id="kit-1" 
+                            data-kit-name="Acne-Fighting Trio" 
+                            data-kit-price="89">
+                        Get This Kit
+                    </button>
+                </div>
+                <div class="carousel-item">
+                    <div class="kit-image-container">
+                        <img src="images/Anti-Aging Essentials kit.webp" alt="Anti-Aging Essentials Kit" class="kit-image">
+                    </div>
+                    <h3>Anti-Aging Essentials</h3>
+                    <p>Powerful peptides and antioxidants to target fine lines.</p>
+                    <div class="price">$125</div>
+                    <button class="cta-button kit-button" 
+                            data-kit-id="kit-2" 
+                            data-kit-name="Anti-Aging Essentials" 
+                            data-kit-price="125">
+                        Get This Kit
+                    </button>
+                </div>
+                <div class="carousel-item">
+                    <div class="kit-image-container">
+                        <img src="images/Sensitive Skin Savior.webp" alt="Sensitive Skin Savior Kit" class="kit-image">
+                    </div>
+                    <h3>Sensitive Skin Savior</h3>
+                    <p>Gentle, fragrance-free formulas perfect for sensitive types.</p>
+                    <div class="price">$75</div>
+                    <button class="cta-button kit-button" 
+                            data-kit-id="kit-3" 
+                            data-kit-name="Sensitive Skin Savior" 
+                            data-kit-price="75">
+                        Get This Kit
+                    </button>
+                </div>
+            </div>
+            <div class="carousel-nav">
+                <div class="carousel-dot active" data-slide="0"></div>
+                <div class="carousel-dot" data-slide="1"></div>
+                <div class="carousel-dot" data-slide="2"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Customer Results Gallery -->
+    <section class="section section-alt" id="customer-results">
+        <div class="container">
+            <h2 class="section-title">Real Results from Real Customers</h2>
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-image">
+                        <div class="customer-avatar">SM</div>
+                        <div class="result-badge">6 weeks</div>
+                    </div>
+                    <div class="result-content">
+                        <div class="customer-name">Sarah M.</div>
+                        <div class="result-stars">★★★★★</div>
+                        <p class="result-quote">"My acne cleared up completely! The AI recommendations were spot-on for my combination skin."</p>
+                        <div class="products-used">
+                            <span class="product-tag">Clear Skin Treatment</span>
+                            <span class="product-tag">Niacinamide Serum</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="result-card">
+                    <div class="result-image">
+                        <div class="customer-avatar">JK</div>
+                        <div class="result-badge">8 weeks</div>
+                    </div>
+                    <div class="result-content">
+                        <div class="customer-name">Jennifer K.</div>
+                        <div class="result-stars">★★★★★</div>
+                        <p class="result-quote">"Fine lines visibly reduced and my skin feels so much firmer. The retinol cream is amazing!"</p>
+                        <div class="products-used">
+                            <span class="product-tag">Retinol Age Defense</span>
+                            <span class="product-tag">Peptide Complex</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="result-card">
+                    <div class="result-image">
+                        <div class="customer-avatar">LR</div>
+                        <div class="result-badge">4 weeks</div>
+                    </div>
+                    <div class="result-content">
+                        <div class="customer-name">Lisa R.</div>
+                        <div class="result-stars">★★★★★</div>
+                        <p class="result-quote">"Dark spots faded dramatically! My skin tone is so much more even now."</p>
+                        <div class="products-used">
+                            <span class="product-tag">Brightening Corrector</span>
+                            <span class="product-tag">Vitamin C Serum</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Offer -->
+    <section class="section offer">
+    <div class="container">
+        <h2>30-Day Money-Back Guarantee</h2>
+        <p>Love your personalized routine or get your money back. No questions asked.</p>
+        <div class="confidence-features">
+            <div class="trust-item">✓ Free Shipping</div>
+            <div class="trust-item">✓ 30-Day Returns</div>
+            <div class="trust-item">✓ Secure Checkout</div>
+        </div>
+        <a href="#products" class="cta-button">🛡️ Shop with Confidence</a>
+    </div>
+</section>
+
+    <!-- Newsletter -->
+    <section class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Stay Updated</h2>
+            <form class="newsletter-form">
+                <h3>Get tips & exclusive offers</h3>
+                <div class="form-group">
+                    <input type="email" class="form-input" placeholder=" " required>
+                    <label class="form-label">Your email address</label>
+                </div>
+                <button type="submit" class="cta-button">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+  <!-- Enhanced Education Hub -->
+<section class="section" id="blog">
+    <div class="container">
+        <div class="education-intro">
+            <h2 class="section-title">Skincare Education Hub</h2>
+            <p class="section-subtitle">Evidence-based knowledge from dermatology experts to help you make informed skincare decisions and achieve healthier skin.</p>
+            <div class="interactive-callout">
+                <span class="callout-icon">📚</span>
+                <span class="callout-text">Click any article below to dive deep into expert skincare knowledge</span>
+            </div>
+        </div>
+        
+        <div class="blog-grid">
+            <!-- AI Technology Article -->
+            <article class="blog-card">
+                <div class="blog-visual">
+                    <div class="blog-icon">⚡</div>
+                </div>
+                <div class="blog-content">
+                    <span class="blog-category">AI Technology</span>
+                    <h3 class="blog-title">The Science Behind AI Skin Matching</h3>
+                    <div class="blog-meta">
+                        <span class="read-time">⏱️ 4 min read</span>
+                        <span class="author-info">Dr. Sarah Chen</span>
+                    </div>
+                    <p class="blog-excerpt">Discover how machine learning algorithms analyze thousands of skin factors to create perfect product recommendations tailored to your unique profile.</p>
+                    <button class="blog-expand-btn" data-article="ai-technology">
+                        Read Full Article
+                    </button>
+                </div>
+            </article>
+
+            <!-- Skincare Routines Article -->
+            <article class="blog-card">
+                <div class="blog-visual">
+                    <div class="blog-icon">✨</div>
+                </div>
+                <div class="blog-content">
+                    <span class="blog-category">Skincare Routines</span>
+                    <h3 class="blog-title">Morning vs Evening Routines</h3>
+                    <div class="blog-meta">
+                        <span class="read-time">⏱️ 6 min read</span>
+                        <span class="author-info">Emma Rodriguez</span>
+                    </div>
+                    <p class="blog-excerpt">Learn why timing matters in skincare and how to optimize your daily routine for maximum effectiveness and skin health.</p>
+                    <button class="blog-expand-btn" data-article="skincare-routines">
+                        Read Full Article
+                    </button>
+                </div>
+            </article>
+
+            <!-- Ingredients Article -->
+            <article class="blog-card">
+                <div class="blog-visual">
+                    <div class="blog-icon">💎</div>
+                </div>
+                <div class="blog-content">
+                    <span class="blog-category">Ingredients</span>
+                    <h3 class="blog-title">Ingredient Spotlight: Hyaluronic Acid</h3>
+                    <div class="blog-meta">
+                        <span class="read-time">⏱️ 5 min read</span>
+                        <span class="author-info">Dr. Michael Park</span>
+                    </div>
+                    <p class="blog-excerpt">Everything you need to know about this powerful hydrating ingredient - from science to application tips and combinations.</p>
+                    <button class="blog-expand-btn" data-article="ingredients">
+                        Read Full Article
+                    </button>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- Expandable Article Content Sections -->
+<div class="article-overlay" id="articleOverlay"></div>
+
+<div class="article-modal" id="articleModal">
+    <div class="article-content">
+        <button class="close-article" id="closeArticle">&times;</button>
+        <div id="articleBody">
+            <!-- Content will be dynamically inserted here -->
+        </div>
+    </div>
+</div>
+    
+<!-- Footer -->
+<footer class="footer" id="contact">
+  <div class="footer-container">
+    <div class="footer-section">
+      <h3>GlowAI</h3>
+      <p>Personalized solutions powered by AI. Your journey starts here.</p>
+      <div class="social-icons">
+        <a href="#" class="social-icon">Fb</a>
+        <a href="#" class="social-icon">Ig</a>
+        <a href="#" class="social-icon">Tw</a>
+      </div>
+
+      <!-- Contact Info Block -->
+      <div class="footer-contact-box">
+        <p>📍 Mumbai, India</p>
+        <p>📞 +91 98765 43210</p>
+        <p>✉️ support@glowai.com</p>
+      </div>
+    </div>
+
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#blog">Blog</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="contact-box">
+      <h4 class="section-title">Reach Us</h4>
+      <h2 class="contact-heading">Get in Touch</h2>
+      <p>Have a question or need skincare advice? Message us below.</p>
+      
+      <!-- Updated Formspree Form -->
+      <form id="contactForm" class="contact-form" action="https://formspree.io/f/xzzvylqz" method="POST">
+        <input type="text" name="name" placeholder="Your Name*" required />
+        <input type="tel" name="phone" placeholder="Phone Number*" pattern="[0-9]{10}" title="Please enter a valid 10-digit phone number" required />
+        <input type="email" name="email" placeholder="Your Email*" required />
+        <textarea name="message" placeholder="Message (optional)" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+
+      <div class="thank-you" id="thankYouMsg" style="display:none; background:#d4edda; color:#155724; padding:10px; margin-top:10px; border-radius:5px;">
+        ✅ Thank you! Your message has been sent.
+      </div>
+    </div>
+  </div>
+  <p class="footer-bottom">© 2025 GlowAI. All Rights Reserved.</p>
+</footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+ <!-- Checkout Popup Modal -->
+<div id="checkoutPopup" class="checkout-popup">
+  <div class="checkout-box">
+    <button type="button" id="closeCheckout" class="close-btn">✗</button>
+    <form id="checkoutForm" class="contact-form" action="https://formspree.io/f/xzzvylqz" method="POST">
+      <input type="hidden" name="formType" value="Order">
+      <input type="hidden" name="cartData" id="cartData">
+      <input type="hidden" name="totalPrice" id="totalPrice">
+
+      <!-- Order Summary -->
+      <div id="orderSummaryBox">
+        <h3>Your Order</h3>
+        <p id="orderSummaryText"></p>
+        <p><strong>Total: <span id="orderSummaryTotal"></span></strong></p>
+      </div>
+
+      <!-- User Info -->
+      <input type="text" name="name" placeholder="Full Name*" required>
+      <input type="email" name="email" placeholder="Email Address*" required>
+      <input type="tel" name="contact" placeholder="Contact Number*" required>
+      <input type="text" name="address" placeholder="Shipping Address*" required>
+
+      <!-- Buttons -->
+      <div class="checkout-buttons">
+        <button type="button" id="backToCart" class="btn-secondary">← Return</button>
+        <button type="submit" class="btn-primary">Submit Order</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Toast Notification -->
+<div id="toast" class="toast"></div>
+
+
+<!-- Enhanced Offline Chatbot Widget -->
+<div id="chatWidget" class="chat-widget">
+  <div id="chatBubble" class="chat-bubble">💬</div>
+
+     <!-- Skincare Tooltip -->
+  <div id="chatTooltip" class="chat-tooltip">
+    <div class="tooltip-content">
+      <span id="tooltipText">✨ Need skincare help?</span>
+    </div>
+    <div class="tooltip-arrow"></div>
+  </div>
+
+
+  <!-- Chat overlay to allow outside click closing -->
+  <div id="chatOverlay" class="chat-overlay"></div>
+
+  <div id="chatWindow" class="chat-window">
+    <div class="chat-header">
+      <span id="chatGreeting" class="chat-logo">✨ GlowAI Assistant</span>
+      <button id="closeChatBtn">&times;</button>
+    </div>
+    <div id="chatMessages" class="chat-messages">
+      <div class="chat-message bot">
+        <div class="message-bubble bot">
+          <span id="welcomeMessage">Hi 👋 I'm GlowAI Assistant.</span><br>
+          You can ask me about skincare tips or product recommendations.
+        </div>
+        <div class="quick-suggestions" id="quickSuggestions">
+  <button class="suggestion-btn" data-message="I have acne">Acne</button>
+  <button class="suggestion-btn" data-message="I have dry skin">Dry skin</button>
+  <button class="suggestion-btn" data-message="I have oily skin">Oily skin</button>
+  <button class="suggestion-btn" data-message="Give me skincare tips">Tips</button>
+  <button class="suggestion-btn" id="routineBtn" data-message="">Routine</button>
+  <button class="suggestion-btn" data-message="Show me budget-friendly products">Budget</button>
+  <button class="suggestion-btn" data-message="Tell me about sunscreen">Sunscreen</button>
+</div>
+      </div>
+    </div>
+    <div class="chat-input-area">
+      <input type="text" id="chatInput" placeholder="Type your message..." />
+      <button id="sendChatBtn">Send</button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
