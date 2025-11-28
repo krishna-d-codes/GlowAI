@@ -1,4 +1,4 @@
-🌟 GlowAI – AI Powered Skincare Recommendation Website
+#🌟 GlowAI – AI Powered Skincare Recommendation Website
 
 GlowAI is an intelligent skincare website that provides personalized product suggestions using an AI-style quiz and a smart offline chatbot. Designed with a clean UI, smooth animations, and responsive layouts using HTML, CSS, and JavaScript.
 
