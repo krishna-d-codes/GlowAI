@@ -1,4 +1,4 @@
-🌟 GlowAI – AI Powered Skincare Recommendation Website
+**🌟 GlowAI – AI Powered Skincare Recommendation Website
 
 A clean, modern, and intelligent skincare platform designed to guide users with personalized product recommendations. Built with HTML, CSS, and JavaScript, GlowAI focuses on elegant UI, responsive design, and smart, user-friendly features.
 
@@ -43,12 +43,11 @@ Responsive Web Design
 
 Krishna Dighe
 
-🔗 Connect with me on LinkedIn:
-www.linkedin.com/in/krishna-dighe410
+🔗 Connect with me on LinkedIn:[LinkedIn](https://www.linkedin.com/in/krishna-dighe410)
 
 🧠 Inspiration
 
 GlowAI was created from a passion for skincare, UI/UX, and clean web experiences.
 The aim was to build a platform that feels beautiful, intelligent, and helpful — blending modern design with practical skincare advice.
 
-Inspired by minimal and luxurious skincare brands, GlowAI brings together interactive quizzes, personalized suggestions, and a smooth browsing experience for every user.
+Inspired by minimal and luxurious skincare brands, GlowAI brings together interactive quizzes, personalized suggestions, and a smooth browsing experience for every user.******
