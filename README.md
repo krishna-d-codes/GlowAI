@@ -1,42 +1,30 @@
-#🌟 GlowAI – AI Powered Skincare Recommendation Website
+# GlowAI – Skincare Product Recommendation Website ✨
 
-GlowAI is an intelligent skincare website that provides personalized product suggestions using an AI-style quiz and a smart offline chatbot. Designed with a clean UI, smooth animations, and responsive layouts using HTML, CSS, and JavaScript.
+GlowAI is a modern skincare website that leverages **AI-powered recommendations** to help users choose the best products for their skin type. Built with HTML, CSS, and JavaScript for a clean, interactive user experience.
 
-🎯 Features:
+## 🎯 Features:
+- 🧴 AI-based skincare product recommendations
+- 📝 Interactive quiz for personalized suggestions
+- 🛒 Cart functionality with quantity control
+- 🖼️ Beautiful static hero section with multiple product highlights
+- 📱 Mobile responsive design
+- 📧 Contact form integration
+- 💻 User-friendly and clean interface
 
-🤖 AI-Style Chatbot with 50+ smart responses
+## 🚀 Tech Stack:
+- HTML
+- CSS
+- JavaScript
+- AI-powered recommendation logic (front-end)
+- Responsive design techniques
 
-🔍 AI Skin Analysis Quiz (5-step interactive quiz)
+---
 
-🛒 Smart Cart System (add/remove products, kits, live cart count, success popups)
+## 🙋‍♂️ Author
+**Krishna Dighe**  
+Connect with me on [LinkedIn](https://linkedin.com/in/krishna-dighe410)
 
-📱 Fully Responsive UI
+---
 
-🎨 Modern UI/UX with glowing gradients, soft animations, and smooth transitions
-
-📬 Functional Contact Form (Formspree integration)
-
-🧴 Dynamic Content Sections (hero, best sellers, kits, chatbot, contact, etc.)
-
-🚀 Tech Stack:
-
-HTML
-
-CSS
-
-JavaScript
-
-Formspree
-
-Responsive Web Design
-
-🙋‍♂️ Author
-
-Krishna Dighe
-Connect with me on [LinkedIn](https://www.linkedin.com/in/krishna-dighe410)
-
-
-🧠 Inspiration
-
-GlowAI was created to blend beautiful web design with practical skincare guidance.
-Inspired by premium skincare brands, the goal was to build a website that feels modern, helpful, and easy to use — offering users both education and product suggestions in a clean, interactive experience.
+## 💡 About This Project
+The idea for GlowAI came from my interest in **personalized skincare** and the power of AI to simplify product choices. I wanted to create a platform where users could get **customized product suggestions** without feeling overwhelmed by endless options. GlowAI combines clean design, user-friendly navigation, and interactive AI features to make skincare shopping **fun, easy, and effective**.
