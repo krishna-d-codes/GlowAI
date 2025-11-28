@@ -23,7 +23,7 @@ Soft gradients, glowing patterns, smooth transitions, and clean layout inspired 
 Formspree-powered contact form with a clean success message and redirect.
 
 🧴 Dynamic Sections
-Hero section, product recommendations, best sellers, kits, chatbot, contact, and more.
+Hero section, product recommendations, best sellers, kits, chatbot, contact form, and more.
 
 🚀 Tech Stack:
 
@@ -33,18 +33,16 @@ CSS
 
 JavaScript
 
-Formspree (Contact Form)
+Formspree
 
 Responsive Web Design
 
 👤 Author
 
 Krishna Dighe
-
-🔗 Connect with me on LinkedIn
+🔗 Connect with me on [LinkedIn](https://www.linkedin.com/in/krishna-dighe410)
 
 🧠 Inspiration
 
-GlowAI was created out of a passion for skincare and elegant user interfaces.
-The goal was to design something clean, intelligent, and easy for everyone—combining modern UI aesthetics with helpful skincare guidance.
-Inspired by premium skincare brands, GlowAI delivers a smooth experience through interactive quizzes, personalized suggestions, and an appealing design system.
+GlowAI was built with a passion for simple, intelligent, and elegant skincare guidance.
+The goal was to create a website that is clean, helpful, and modern, offering personalized recommendations and a pleasant browsing experience for all users.
