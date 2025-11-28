@@ -1,31 +1,31 @@
-**🌟 GlowAI – AI Powered Skincare Recommendation Website
+🌟 GlowAI – AI Powered Skincare Recommendation Website
 
-A clean, modern, and intelligent skincare platform designed to guide users with personalized product recommendations. Built with HTML, CSS, and JavaScript, GlowAI focuses on elegant UI, responsive design, and smart, user-friendly features.
+GlowAI is a modern skincare platform that offers personalized product recommendations using an interactive AI-style quiz and a smart offline chatbot. Built with HTML, CSS, and JavaScript, GlowAI focuses on clean design, smooth animations, and a highly responsive user experience.
 
-✨ Features
+🎯 Features:
 
-✅ AI Skin Analysis Quiz
-Interactive quiz that guides users through questions and suggests products based on their skin needs.
+🤖 AI-Style Chatbot with 50+ Responses
+Provides skincare routines, lifestyle tips, ingredient guidance, common mistakes, and more.
 
-🤖 AI-Style Chatbot
-Smart offline chatbot with 50+ replies, skincare routines, common mistakes, lifestyle tips, and ingredient-wise guidance.
+🔍 AI Skin Analysis Quiz
+A 5-step interactive quiz that helps users identify the best products for their skin needs.
 
 🛒 Smart Cart System
-Add/remove products, add kits, real-time cart count updates, and floating success popups.
+Add/remove products, add skincare kits, auto cart count updates, and success popups.
 
-📱 Fully Responsive UI
-Clean modern layout that works smoothly across all devices.
+📱 Fully Responsive Design
+Looks beautiful and works smoothly on all device sizes.
 
-🎛️ Dynamic Website Sections
-Hero section, best-sellers, kits, chatbot, contact form, testimonials, and more.
+🎨 Modern UI/UX
+Soft gradients, glowing patterns, smooth transitions, and clean layout inspired by premium skincare brands.
 
 📬 Functional Contact Form
-Integrated Formspree contact form with a success alert and smooth UI experience.
+Formspree-powered contact form with a clean success message and redirect.
 
-🎨 Beautiful Modern UI/UX
-Soft color palette, animated gradients, glowing patterns, and smooth transitions inspired by premium skincare brands.
+🧴 Dynamic Sections
+Hero section, product recommendations, best sellers, kits, chatbot, contact, and more.
 
-🚀 Tech Stack
+🚀 Tech Stack:
 
 HTML
 
@@ -35,19 +35,16 @@ JavaScript
 
 Formspree (Contact Form)
 
-Vanilla Animations
-
 Responsive Web Design
 
-🙋‍♂️ Author
+👤 Author
 
 Krishna Dighe
 
-🔗 Connect with me on [LinkedIn](https://www.linkedin.com/in/krishna-dighe410)
+🔗 Connect with me on LinkedIn
 
 🧠 Inspiration
 
-GlowAI was created from a passion for skincare, UI/UX, and clean web experiences.
-The aim was to build a platform that feels beautiful, intelligent, and helpful — blending modern design with practical skincare advice.
-
-Inspired by minimal and luxurious skincare brands, GlowAI brings together interactive quizzes, personalized suggestions, and a smooth browsing experience for every user.******
+GlowAI was created out of a passion for skincare and elegant user interfaces.
+The goal was to design something clean, intelligent, and easy for everyone—combining modern UI aesthetics with helpful skincare guidance.
+Inspired by premium skincare brands, GlowAI delivers a smooth experience through interactive quizzes, personalized suggestions, and an appealing design system.
